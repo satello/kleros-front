@@ -14,7 +14,6 @@ const Grid = ({
       </div>
       { children }
     </div>
-
   </div>
 )
 

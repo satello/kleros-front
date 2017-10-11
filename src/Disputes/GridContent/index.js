@@ -20,32 +20,55 @@ class GridContent extends Component {
 
     if (isFetching) {
       return (
-        <div className='GridContent-container'>
-          <div className='items'>
-            <div className='linear-background-100' />
-            <div className='linear-background-90' />
-            <div className='linear-background-90' />
-          </div>
+        <div className="Grid-container">
+            <div className='header items'>
+              <div className="items-row">
+                <div className='item-long'>Project</div>
+                <div className='item'>Deadline</div>
+                <div className='item'>Case ID</div>
+                <div className='item-long'>Status</div>
+                <div className='item-icon'>Evidence</div>
+              </div>
+            </div>
+            <div className='GridContent-container'>
+              <div className='items'>
+                <div className='linear-background-100' />
+                <div className='linear-background-90' />
+                <div className='linear-background-90' />
+              </div>
+            </div>
         </div>
+
       )
     }
 
     return (
-      <div className='GridContent-container'>
-        <div className='items'>
-          { disputes.map(dispute =>
-            <div key={dispute.caseId} className='items-row'>
-              <div className='item-project'>
-                <div className='item'>{dispute.title}</div>
-                <div className='item'>{dispute.category}</div>
-              </div>
-              <div className='item'>{dispute.deadline}</div>
-              <div className='item'>{dispute.caseId}</div>
-              <div className='item'>{dispute.status}</div>
-              <div className='item'>{dispute.evidence}</div>
+      <div className="Grid-container">
+          <div className='header items'>
+            <div className="items-row">
+              <div className='item-long'>Project</div>
+              <div className='item'>Deadline</div>
+              <div className='item'>Case ID</div>
+              <div className='item-long'>Status</div>
+              <div className='item-icon'>Evidence</div>
             </div>
-        ) }
-        </div>
+          </div>
+          <div className='GridContent-container'>
+            <div className='items'>
+              { disputes.map(dispute =>
+                <div key={dispute.caseId} className='items-row'>
+                  <div className='item-long'>
+                    <div className='item title'>{dispute.title}</div>
+                    <div className='item'>{dispute.category}</div>
+                  </div>
+                  <div className='item'>{dispute.deadline}</div>
+                  <div className='item'>{dispute.caseId}</div>
+                  <div className='item-long'>{dispute.status}</div>
+                  <div className='item-icon'>{dispute.evidence}</div>
+                </div>
+            ) }
+            </div>
+          </div>
       </div>
     )
   }

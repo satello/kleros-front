@@ -30,7 +30,7 @@ class Disputes extends Component {
       'Deadline',
       'Case ID',
       'Status',
-      'Evidence'
+      'Evidence',
     ]
 
     return (
@@ -38,9 +38,7 @@ class Disputes extends Component {
         <SearchBar />
         <div className='content'>
           <h1>Open Disputes</h1>
-          <Grid itemTitles={ itemsTitle }>
-            <GridContent />
-          </Grid>
+            <GridContent itemsTitle={ itemsTitle }/>
         </div>
       </div>
     )
